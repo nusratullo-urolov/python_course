@@ -2,11 +2,13 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from apps.models import Contact
+from users.models import User
 
 
 # @login_required(login_url='/users/sign-in')
 def home(request):
-    return render(request, 'birinchi_bet.html')
+    students = User.objects.all().count()
+    return render(request, 'birinchi_bet.html', {'students': students})
 
 @login_required(login_url='/users/sign-in')
 def kirish(request):
