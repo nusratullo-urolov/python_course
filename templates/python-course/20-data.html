@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python дата и время</title>
+    <link rel="stylesheet" href="{% static 'style-kirish.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#chk1').click(function(){
+                $('.sidenav').toggleClass('show');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="chk1">
+        <div class="logo" ><h1><a href="{% url 'kirish' %}"><b>Python</b> course</a></h1></div>
+        <div class="search-box">
+            <form action="">
+                <input type="text" name="search" id="srch" placeholder="Search...">
+                <button type="sumbit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="menu">
+            <label for="chk1">
+                <i class="fa fa-bars"></i>
+            </label>
+        </div>
+    </header>
+
+    <div class="sidenav">
+        <h2 style="padding-top: 100px; text-align: center;">PYTHON</h2>
+        <a href="{% url 'kirish' %}">Введение в Python</a>
+        <a href="{% url 'ornatish' %}">Установка</a>
+        <a href="{% url 'izoh' %}">Комментарии</a>
+        <a href="{% url 'ozgaruvchi' %}">Переменная</a>
+        <a href="{% url 'malumot_turi' %}">Типы данных</a>
+        <a href="{% url 'sonlar' %}">Числа</a>
+        <a href="{% url 'satr' %}">Строка</a>
+        <a href="{% url 'mantiq' %}">Boolean (Логика)</a>
+        <a href="{% url 'operator' %}">Операторы</a>
+        <a href="{% url 'list' %}">Список</a>
+        <a href="{% url 'tuple' %}">Кортеж</a>
+        <a href="{% url 'set' %}">Множество</a>
+        <a href="{% url 'if' %}">Условный оператор</a>
+        <a href="{% url 'funksiya' %}">Функция</a>
+        <a href="{% url 'while' %}">Цикл</a>
+        <a href="{% url 'massiv' %}">Массив</a>
+        <a href="{% url 'sinfobject' %}">Классы и объекты</a>
+        <a href="{% url 'meros' %}">Наследование</a>
+        <a href="{% url 'modul' %}">Модуль</a>
+        <a href="{% url 'data' %}" style="background-color: rgb(18, 248, 18); color: black;">Дата и время</a>
+        <a href="{% url 'json' %}">JSON</a>
+        <a href="{% url 'try' %}">Try Except</a>
+        <a href="{% url 'fayl' %}">Работа с файлами</a>
+        <a href="{% url 'index' %}">Тест для сертификата </a>
+        <a href="{% url 'create_question' 1 %}">Создать тест</a>
+    </div>
+    <div class="main">
+        <h1 style="padding-top: 100px;">Дата и время <span>Python</span></h1> <br> <hr><br>
+        
+        <p>Его имя <b>datetime</b> - это готовый модуль для определения текущей даты и выполнения действий над датами для представления даты на языке программирования Python.</p><br>
+        <p class="qoro">import datetime <br><br>x = datetime.datetime.now() <br>print(x)</p><br>
+        <p class="rez">Результат: <p class="nat">2024-03-31 21:30:40.602510</p></p><br><br><br>
+
+        <p>Давайте объясним результат выше. Последовательность результата следующая. Дата включает год, месяц, день, часы, минуты, секунды и микросекунды. Есть много способов вернуть данные об объекте даты в модуле <b>datetime</b>. Мы сообщим вам день года и день недели в текущее время.</p><br>
+        <p class="qoro">import datetime <br><br>x = datetime.datetime.now() <br><br>print(x.year) <br>print(x.strftime("%A"))</p><br>
+        <p class="rez">Результат: <p class="nat">2024 <br>Tuesday</p></p><br><br><br>
+
+        <p><b class="abbo">Создание объектов даты</b></p><br>
+        <p>Мы можем использовать класс модуля <b>datetime()</b> (конструктор) для создания даты. Для создания даты <b>datetime()</b>, классу требуются три параметра: год, месяц, день.</p><br>
+        <p class="qoro">import datetime <br>x = datetime.datetime(2024, 3, 31) <br>print(x)</p><br>
+        <p class="rez">Результат: <p class="nat">2024-02-31 00:00:00</p></p><br><br><br>
+
+        <p><b class="abbo">Функция strftime()</b></p><br>
+        <p>Объект <b>datetime</b> имеет метод форматирования объектов даты в читаемые строки. <b>strftime()</b> принимает один параметр для определения формата строки.</p><br>
+        <p class="qoro">import datetime <br>x = datetime.datetime(2024, 3, 31)</p><br>
+        <p class="rez">Результат: <p class="nat">March</p></p><br><br><hr><br><br>
+
+        <p><b class="abbo">Информацию о коды фарматов:</b></p><br>
+        <ul style="letter-spacing: 1px;">
+            <li><b>%a</b> - краткое название дней недели (Wed)</li>
+            <li><b>%A</b> - полное название дня недели (Wednesday)</li>
+            <li><b>%w</b> - в какой день недели, т.е. в какой день 0 - 6 (3)</li>
+            <li><b>%d</b> - день месяца (31)</li>
+            <li><b>%b</b> - краткое название месяца (Dec)</li>
+            <li><b>%B</b> - полное название месяца (December)</li>
+            <li><b>%m</b> - месяцы в цифрах 01 - 12 (12)</li>
+            <li><b>%y</b> - короткое число года, последние две цифры (22)</li>
+            <li><b>%Y</b> - полное название года (2024)</li>
+            <li><b>%H</b> - час тарификация 00 - 23 (18)</li>
+            <li><b>%l</b> - час описание 00 - 12 (09)</li>
+            <li><b>%p</b> - час описание AM/PM (PM)</li>
+            <li><b>%M</b> - минут описание 00 - 59 (35)</li>
+            <li><b>%S</b> - секунда 00 - 59 (09)</li>
+            <li><b>%f</b> - миллисекунда 000000-999999 (465845)</li>
+            <li><b>%Z</b> - TimeZone (CST)</li>
+            <li><b>%j</b> - день года 001 - 366 (263)</li>
+            <li><b>%C</b> - выпуск века (21)</li>
+        </ul><br><br>
+    </div>
+    <footer>
+        <h3><b>Uzbek Developers</b></h3><hr>
+        <p>2024 © <a href="{% url 'kirish' %}"><b style="color: black;">Myblog IT</b></a></p>
+        <p>Created by Muzaffar Bekturdiyev</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комментарий Python</title>
+    <link rel="stylesheet" href="{% static 'style-kirish.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#chk1').click(function(){
+                $('.sidenav').toggleClass('show');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="chk1">
+        <div class="logo" ><h1><a href="{% url 'kirish' %}"><b>Python</b> course</a></h1></div>
+        <div class="search-box">
+            <form action="">
+                <input type="text" name="search" id="srch" placeholder="Search...">
+                <button type="sumbit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="menu">
+            <label for="chk1">
+                <i class="fa fa-bars"></i>
+            </label>
+        </div>
+    </header>
+
+    <div class="sidenav">
+        <h2 style="padding-top: 100px; text-align: center;">PYTHON</h2>
+        <a href="{% url 'kirish' %}">Введение в Python</a>
+        <a href="{% url 'ornatish' %}">Установка</a>
+        <a href="{% url 'izoh' %}" style="background-color: rgb(18, 248, 18); color: black;">Комментарии</a>
+        <a href="{% url 'ozgaruvchi' %}">Переменная</a>
+        <a href="{% url 'malumot_turi' %}">Типы данных</a>
+        <a href="{% url 'sonlar' %}">Числа</a>
+        <a href="{% url 'satr' %}">Строка</a>
+        <a href="{% url 'mantiq' %}">Boolean (Логика)</a>
+        <a href="{% url 'operator' %}">Операторы</a>
+        <a href="{% url 'list' %}">Список</a>
+        <a href="{% url 'tuple' %}">Кортеж</a>
+        <a href="{% url 'set' %}">Множество</a>
+        <a href="{% url 'if' %}">Условный оператор</a>
+        <a href="{% url 'funksiya' %}">Функция</a>
+        <a href="{% url 'while' %}">Цикл</a>
+        <a href="{% url 'massiv' %}">Массив</a>
+        <a href="{% url 'sinfobject' %}">Классы и объекты</a>
+        <a href="{% url 'meros' %}">Наследование</a>
+        <a href="{% url 'modul' %}">Модуль</a>
+        <a href="{% url 'data' %}">Дата и время</a>
+        <a href="{% url 'json' %}">JSON</a>
+        <a href="{% url 'try' %}">Try Except</a>
+        <a href="{% url 'fayl' %}">Работа с файлами</a>
+        <a href="{% url 'index' %}">Тест для сертификата </a>
+        <a href="{% url 'create_question' 1 %}">Создать тест</a>
+    </div>
+    <div class="main">
+        <h1 style="padding-top: 100px;">Комментарий <span>Python</span></h1> <br> <hr><br>
+        <p>Здравствуйте, уважаемый программист, сегодня мы поговорим о том, как оставить комментарий на языке программирования Python! Прежде чем мы начнем, Нам необходимо выяснить, почему мы должны использовать комментарий! Помните об этом! <b>Комментарии</b> работа делится на <b>открытый</b> и <b>закрытый</b> тип!</p><br><br><hr><br>
+        
+        <p class="sari"><i style="color: black;"><b>Открытая комментарий</b> - это одна из тех аннотаций, которые видны пользователю. Например! Мы можем привести пример сообщения о том, что ваш пароль для входа является правильным или неправильным во время входа в систему!</i></p><br>
+        <p class="sari"><i style="color: black;"><b>Закрытый комментарий</b> - это комментарий, оставляемый в качестве комментария к части программы, чтобы не было необходимости в повторном объяснении между программистами!</i></p><br><hr><br><br>
+        
+        <p style="color: red; text-align: center;"><b>Приведем пример на языке программирования Python!</b></p><br>
+        <p style="text-align: center;"># Это написано для комментария</p><br>
+        <p style="text-align: center;"># myblog.it.uz изучайте язык программирования на сайте!</p><br><br>
+        
+        <p class="abbo"><b>Для чего применяется сам комментарий?</b></p><br>
+        <p>Примечание язык программирования <b>Python</b> может быть применен для объяснения кода!</p><br>
+        <p>Комментарии могут быть использованы для удобочитаемости кода.</p><br>
+        <p>Когда вы работаете в команде, вам не нужно снова объяснять свой код своей команде! потому что, оставив комментарий, у вас будет возможность объяснить код, который вы написали за один раз!</p><br><br>
+        
+        <p class="abbo"><b>Создать комментарий или объяснение.</b></p><br>
+        <p>Чтобы создать аннотацию на языке программирования Python, вы пишете <b>комментарий</b> после <b>#</b>! После символа <b># Python</b> игнорирует написанный код при передаче на компьютерный язык!</p><br>
+        <p class="qoro"><span style="color: gainsboro;"># написано для комментария</span> <br> <span style="color: yellow;">print("Hello, World! Myblog IT")</span></p><br>
+        <p class="rez">Результат: <p class="nat">Hello, World! Master Bekturdiyev</p></p><br><br>
+        
+        <p>Даже если вы правильно вводите код, который вы пишете, а не просто отдельную строку при написании <b>комментарии</b>! как мы можем видеть на примере ниже!</p><br>
+        <p class="qoro"><span style="color: yellow;">print("Hello, World! Master Bekturdiyev")</span> <span style="color: gainsboro;"># написано для комментария</span></p><br>
+        <p class="rez">Результат: <p class="nat">Hello, World! Master Bekturdiyev</p></p><br><br><hr><br>
+        
+        <p class="sari">Символ <b>#</b> застревает в процессе написания кода и не читает ваш код после этого символа, если вы пишете свой код! Помните, если вы решили стать программистом! Старайтесь быть внимательными.</p><br><hr><br><br>
+        
+        <p class="qoro"><span style="color: gainsboro;"># print("Hello, World!")</span> <br>print("Master Bekturdiyev")</p><br>
+        <p class="rez">Результат: <p class="nat">Master Bekturdiyev</p></p><br>
+        
+        <p>Как мы видим в коде, написанном выше!  принимая код, написанный после <b>#</b>, как комментарий. Программа не напечатала <b>комментарий</b> в результате! Игнорируется при переводе на компьютерный язык!</p><br><br><hr><br><br>
+
+        <div class="testing">
+            <p>- - - Тест - - -</p>
+        </div>
+        <div class="testBtn">
+            <a href="{% url 'test' %}"><button type="submit">Погнали</button></a>
+        </div><br><hr><br><br>
+    </div>
+    
+
+    <footer>
+        <h3><b>Uzbek Developers</b></h3><hr>
+        <p>2024 © <a href="{% url 'kirish' %}"><b style="color: black;">Myblog IT</b></a></p>
+        <p>Created by Muzaffar Bekturdiyev</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myblog IT</title>
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'css/stl.css' %}">
+
+    <!-- ikonka -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'ikon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'ikon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'ikon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'ikon/site.webmanifest' %}">
+</head>
+<body>
+    <header class="header">
+        <section class="flex">
+            <a href="#home" class="logo">Myblog IT</a>
+
+            <nav class="navbar">
+                <a href="#home">ГЛАВНЫЙ</a>
+                <a href="#about">О НАС</a>
+                <a href="#courses">КУРСЫ</a>
+                <a href="#admin">АДМИН</a>
+                <a href="#reviews">ОТЗЫВЫ</a>
+                <a href="#contact">КОНТАКТ</a>
+                <a href="{% url 'logout' %}">ВЫЙТИ</a>
+            </nav>
+
+            <div id="menu-btn" class="fas fa-bars"></div>
+
+        </section>
+    </header>
+
+    <!-- home start -->
+    <section class="home" id="home">
+        <div class="row">
+            <div class="content">
+                <p>Дистанционное <span>обучение</span></p>
+                <a href="contact" class="btn">связаться с нами</a>
+            </div>
+
+            <div class="image">
+                <img src="{% static 'img/about1.png' %}" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- home end -->
+
+    <!-- couter start -->
+    <section class="count">
+        <div class="box-container">
+
+            <div class="box">
+                <i class="fas fa-graduation-cap"></i>
+                <div class="content">
+                    <h3>100+</h3>
+                    <p>курсы</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-user-graduate"></i>
+                <div class="content">
+                    <h3>1200+</h3>
+                    <p>студенты</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-chalkboard-user"></i>
+                <div class="content">
+                    <h3>70+</h3>
+                    <p>учителя</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-face-smile"></i>
+                <div class="content">
+                    <h3>99,9%</h3>
+                    <p>удовлетворение</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- couter end -->
+
+    <!-- about start -->
+    <section class="about" id="about">
+        <div class="row">
+
+            <div class="image">
+                <img src="{% static 'img/about.png' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>Почему выбирают нас?</h3>
+                <p>Мы предлагаем доступ к образовательным материалам и курсам абсолютно бесплатно. Это делает наши курсы доступными для широкой аудитории, включая тех, кто не может себе позволить платить за обучение.</p>
+                <a href="#contact" class="btn">связаться с нами</a>
+            </div>
+
+        </div>
+    </section>
+    <!-- about end -->
+
+    <!-- courses start -->
+    <section class="courses" id="courses">
+        <h1 class="heading">наши <span>КУРСЫ</span></h1>
+
+        <div class="swiper course-slider">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide slide">
+                    <img src="{% static 'img/course-4.png' %}" alt="">
+                    {% if request.user.is_authenticated %}
+                    <h3><a href="{% url 'kirish' %}">Регистрация</a></h3>
+                        {% else %}
+                        <h3><a href="{% url 'login' %}">Регистрация</a></h3>
+                    {% endif %}
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum officia tempore, expedita tenetur enim fugiat! Ducimus numquam fugiat dolor inventore excepturi voluptatibus, repellendus nisi, perspiciatis placeat quas doloremque, quis repudiandae.</p>
+                </div>
+                <div class="swiper-slide slide">
+                    <img src="{% static 'img/course-2.png' %}" alt="">
+                    <h3>CSS</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum officia tempore, expedita tenetur enim fugiat! Ducimus numquam fugiat dolor inventore excepturi voluptatibus, repellendus nisi, perspiciatis placeat quas doloremque, quis repudiandae.</p>
+                </div>
+                <div class="swiper-slide slide">
+                    <img src="{% static 'img/course-3.png' %}" alt="">
+                    <h3>JAVASCRIPT</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum officia tempore, expedita tenetur enim fugiat! Ducimus numquam fugiat dolor inventore excepturi voluptatibus, repellendus nisi, perspiciatis placeat quas doloremque, quis repudiandae.</p>
+                </div>
+                <div class="swiper-slide slide">
+                    <img src="{% static 'img/course-1.jpg' %}" alt="">
+                    <h3>HTML</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum officia tempore, expedita tenetur enim fugiat! Ducimus numquam fugiat dolor inventore excepturi voluptatibus, repellendus nisi, perspiciatis placeat quas doloremque, quis repudiandae.</p>
+                </div>
+                <div class="swiper-slide slide">
+                    <img src="{% static 'img/course-5.jfif' %}" alt="">
+                    <h3>CISCO</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum officia tempore, expedita tenetur enim fugiat! Ducimus numquam fugiat dolor inventore excepturi voluptatibus, repellendus nisi, perspiciatis placeat quas doloremque, quis repudiandae.</p>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- courses end -->
+
+    <!-- admin start -->
+    <section class="admin" id="admin">
+        <div class="row">
+            <div class="image">
+                <img src="{% static 'img/you.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>Админ <span>Бектурдиев Музаффар</span></h3>
+                <p>Студент 4 курса Ташкентского Университета Информационных Технологий.</p>
+            </div>
+
+        </div>
+    </section>
+    <!-- admin end -->
+
+    <!-- review start -->
+    <section class="reviews" id="reviews">
+
+        <h1 class="heading">студенты</h1>
+        <div class="swiper reviews-slider">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide slide">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus corrupti ad quo nam iste quas, perspiciatis beatae et molestias suscipit omnis quis placeat cumque temporibus, voluptate dolor nobis aliquid enim?</p>
+                    <div class="user">
+                        <img src="{% static 'img/pc-1.png' %}" alt="">
+                        <div class="user-info">
+                            <h3>Jeki Chan</h3>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus corrupti ad quo nam iste quas, perspiciatis beatae et molestias suscipit omnis quis placeat cumque temporibus, voluptate dolor nobis aliquid enim?</p>
+                    <div class="user">
+                        <img src="{% static 'img/pc-2.png' %}" alt="">
+                        <div class="user-info">
+                            <h3>Jeki Chan</h3>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus corrupti ad quo nam iste quas, perspiciatis beatae et molestias suscipit omnis quis placeat cumque temporibus, voluptate dolor nobis aliquid enim?</p>
+                    <div class="user">
+                        <img src="{% static 'img/pc-3.png' %}" alt="">
+                        <div class="user-info">
+                            <h3>Jeki Chan</h3>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus corrupti ad quo nam iste quas, perspiciatis beatae et molestias suscipit omnis quis placeat cumque temporibus, voluptate dolor nobis aliquid enim?</p>
+                    <div class="user">
+                        <img src="{% static 'img/pc-4.png' %}" alt="">
+                        <div class="user-info">
+                            <h3>Jeki Chan</h3>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus corrupti ad quo nam iste quas, perspiciatis beatae et molestias suscipit omnis quis placeat cumque temporibus, voluptate dolor nobis aliquid enim?</p>
+                    <div class="user">
+                        <img src="{% static 'img/pc-5.png' %}" alt="">
+                        <div class="user-info">
+                            <h3>Jeki Chan</h3>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </section><br><br><br><br><br><br>
+    <!-- review end -->
+
+    <!-- contact start -->
+    <section class="contact" id="contact">
+
+        <h1 class="heading"><span>свяжитесь</span> с нами</h1>
+        <div class="row">
+            <div class="image">
+                <img src="{% static 'img/contact.png' %}" alt="">
+            </div>
+
+            <form action="{% url 'contact' %}" method="post">
+                {% csrf_token %}
+                <span>your name</span>
+                <input type="text" required placeholder="enter your full name" maxlength="50" name="name" class="box">
+                <span>your email</span>
+                <input type="text" required placeholder="enter your valie email" maxlength="50" name="email" class="box">
+                <span>your number</span>
+                <input type="text" required placeholder="enter your valie number" max="999999999" min="0" name="number" class="box" onkeypress="if(this.value.length == 10) return false;">
+                
+                <span>select course</span>
+                <select name="course" class="box" required>
+                    <option value="" disabled selected>select the course ---</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JAVASCRIPT">JAVASCRIPT</option>
+                    <option value="PYTHON">PYTHON</option>
+                    <option value="CISCO">CISCO</option>
+                </select>
+
+                <span>select gender</span>
+                <div class="radio">
+                    <input type="radio" name="gender" value="male" id="male">
+                    <label for="male">male</label>
+                    <input type="radio" name="gender" value="female" id="female">
+                    <label for="female">female</label>
+                </div>
+                <input type="submit" value="send message" class="btn" name="send">
+            </form>
+        </div>
+
+    </section>
+    <!-- contact end -->
+
+    <!-- footer start -->
+     <footer class="footer">
+        <section>
+
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-telegram"></a>
+            </div>
+            <div class="credit">&copy; copyright @ 2024 by <span>Myblog IT</span></div>
+
+        </section>
+     </footer>
+    <!-- footer end -->
+
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- js -->
+    <script src="{% static 'jss/script.js' %}"></script>
+
+</body>
+</html>

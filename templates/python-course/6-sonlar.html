@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Числа Python</title>
+    <link rel="stylesheet" href="{% static 'style-kirish.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#chk1').click(function(){
+                $('.sidenav').toggleClass('show');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="chk1">
+        <div class="logo" ><h1><a href="{% url 'kirish' %}">Python course</a></h1></div>
+        <div class="search-box">
+            <form action="">
+                <input type="text" name="search" id="srch" placeholder="Search...">
+                <button type="sumbit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="menu">
+            <label for="chk1">
+                <i class="fa fa-bars"></i>
+            </label>
+        </div>
+    </header>
+
+    <div class="sidenav">
+        <h2 style="padding-top: 100px; text-align: center;">PYTHON</h2>
+        <a href="{% url 'kirish' %}">Введение в Python</a>
+        <a href="{% url 'ornatish' %}">Установка</a>
+        <a href="{% url 'izoh' %}">Комментарии</a>
+        <a href="{% url 'ozgaruvchi' %}">Переменная</a>
+        <a href="{% url 'malumot_turi' %}">Типы данных</a>
+        <a href="{% url 'sonlar' %}" style="background-color: rgb(18, 248, 18); color: black;">Числа</a>
+        <a href="{% url 'satr' %}">Строка</a>
+        <a href="{% url 'mantiq' %}">Boolean (Логика)</a>
+        <a href="{% url 'operator' %}">Операторы</a>
+        <a href="{% url 'list' %}">Список</a>
+        <a href="{% url 'tuple' %}">Кортеж</a>
+        <a href="{% url 'set' %}">Множество</a>
+        <a href="{% url 'if' %}">Условный оператор</a>
+        <a href="{% url 'funksiya' %}">Функция</a>
+        <a href="{% url 'while' %}">Цикл</a>
+        <a href="{% url 'massiv' %}">Массив</a>
+        <a href="{% url 'sinfobject' %}">Классы и объекты</a>
+        <a href="{% url 'meros' %}">Наследование</a>
+        <a href="{% url 'modul' %}">Модуль</a>
+        <a href="{% url 'data' %}">Дата и время</a>
+        <a href="{% url 'json' %}">JSON</a>
+        <a href="{% url 'try' %}">Try Except</a>
+        <a href="{% url 'fayl' %}">Работа с файлами</a>
+        <a href="{% url 'index' %}">Тест для сертификата </a>
+        <a href="{% url 'create_question' 1 %}">Создать тест</a>
+    </div>
+    <div class="main">
+        <h1 style="padding-top: 100px;">Числа <span>Python</span></h1> <br> <hr><br>
+        <p>В языке программирования Python существует 3 различных типа чисел, и переменные числового типа создаются, когда вы присваиваете им значение.</p><br>
+        <ul style="font-weight: bold;">
+            <li>int</li>
+            <li>float</li>
+            <li>complex</li>
+        </ul><br><br>
+        
+        <p class="qoro">x = 1 <span style="color: gainsboro;"># int</span> <br>
+            y = 2.8 <span style="color: gainsboro;"># float</span><br>
+            z = 1j  <span style="color: gainsboro;"># complex</span></p><br><br><br>
+
+        <p>Язык программирования Python <b>type()</b> имеет возможность определять тип входящей переменной или фиксированной переменной, используя ее функцию для определения типа любой переменной.</p><br>
+        <p class="qoro"> x = 1 <br> y = 2.8 <br> z = 1j <br><br> print(<span style="color: red;">type</span>(x)) <br> print(<span style="color: red;">type</span>(y)) <br> print(<span style="color: red;">type</span>(z))</p><br>
+        <p class="rez">Результат: <p class="nat""> < class 'int' > <br> < class 'float' > <br> < class 'complex' > </p></p><br><br><br>
+
+        <p><b>int</b> - это соответствующие числа, которые являются десятичными числами которые не имеют остатка от целого значения и включают отрицательные или положительные числа.</p><br>
+        <p class="qoro"> x = 1 <br> y = 254646213354488 <br> z = -5586928 <br><br> print(<span style="color: red;">type</span>(x)) <br> print(<span style="color: red;">type</span>(y)) <br> print(<span style="color: red;">type</span>(z))</p><br>
+        <p class="rez">Результат: <p class="nat""> < class 'int' > <br> < class 'int' > <br> < class 'int' > </p></p><br><br><br>
+        
+        <p><b>float</b> - отрицательные или положительные числа, соответствующие приведенному выше правилу (<b>int</b>), но содержащие десятичные дроби.</p><br>
+        <p class="qoro"> x = 1.10 <br> y = 1.0 <br> z = -32.5 <br><br> print(<span style="color: red;">type</span>(x)) <br> print(<span style="color: red;">type</span>(y)) <br> print(<span style="color: red;">type</span>(z))</p><br>
+        <p class="rez">Результат: <p class="nat""> < class 'float' > <br> < class 'float' > <br> < class 'float' > </p></p><br><br><br>
+        
+        <p><b>complex</b> - Комплексные числа записываются как мнимая часть "<b>j</b>".</p><br>
+        <p class="qoro"> x = 3 + 5j <br> y = 6j <br> z = -5j <br><br> print(<span style="color: red;">type</span>(x)) <br> print(<span style="color: red;">type</span>(y)) <br> print(<span style="color: red;">type</span>(z))</p><br>
+        <p class="rez">Результат: <p class="nat""> < class 'complex' > <br> < class 'complex' > <br> < class 'complex' > </p></p><br><br><br>
+        
+        <p>Язык программирования Python имеет возможность преобразовывать числовые типы из одного типа в другой, как и другие языки программирования. Для этого можно использовать <b>int(), float()</b> и <b>complex()</b> функции.</p><br>
+        <p class="qoro"><span style="color: gainsboro;"># конвертировать целое число в float</span> <br>x = float(1) <br><br><span style="color: gainsboro;"># преобразование из float в int</span> <br>y = int(2.8) <br><br><span style="color: gainsboro;"># преобразование из int в complex</span> <br>z = complex(x) <br><br>print(x) <br>print(y) <br>print(z)</p><br>
+        <p class="rez">Результат: <p class="nat""> 1.0 <br> 2 <br> (1+0j) <br> < class 'float' > < class 'int' > < class 'complex' > </p></p><br><br><br>
+        
+        <p><b class="abbo">Случайное число.</b></p><br>
+        <p>У Python <b>random()</b> нет функции генерации случайных чисел , но у Python <b>random</b> есть встроенный модуль, который можно использовать для генерации случайных чисел :</p><br>
+        <p class="qoro"><span style="color: red;">import</span> random <br><br> print(<span style="color: red;">random()</span>.randrange(1, 10))</p><br>
+        <p class="rez">Результат: <p class="nat""> 9 </p></p><br><br><br>
+    </div>
+    <footer>
+        <h3><b>Uzbek Developers</b></h3><hr>
+        <p>2024 © <a href="{% url 'kirish' %}"><b style="color: black;">Myblog IT</b></a></p>
+        <p>Created by Muzaffar Bekturdiyev</p>
+    </footer>
+</body>
+</html>

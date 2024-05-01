@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type='text/css'>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        body {
+            color: black;
+            font-family: Georgia, serif;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0; /* Optional: Change the background color */
+        }
+        .container {
+            border: 20px solid tan;
+            width: 750px;
+            height: 563px;
+            text-align: center;
+        }
+        .logo {
+            color: tan;
+        }
+        .marquee {
+            color: tan;
+            font-size: 48px;
+            margin: 20px;
+        }
+        .assignment {
+            margin: 20px;
+        }
+        .person {
+            border-bottom: 2px solid black;
+            font-size: 32px;
+            font-style: italic;
+            margin: 20px auto;
+            width: 400px;
+        }
+        .reason {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            An Organization
+        </div>
+
+        <div class="marquee">
+            Certificate of Completion
+        </div>
+
+        <div class="assignment">
+            This certificate is presented to
+        </div>
+
+        <div class="person">
+            {{ full_name }}
+        </div>
+
+        <div class="reason">
+            <p>has successfully completed the test Python"</p>
+            <p>with a completion percentage of {{ percentage }}%.</p>
+        </div>
+    </div>
+</body>
+</html>

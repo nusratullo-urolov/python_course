@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Строка Python</title>
+    <link rel="stylesheet" href="{% static 'style-kirish.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#chk1').click(function(){
+                $('.sidenav').toggleClass('show');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="chk1">
+        <div class="logo" ><h1><a href="{% url 'kirish' %}"><b>Python</b> course</a></h1></div>
+        <div class="search-box">
+            <form action="">
+                <input type="text" name="search" id="srch" placeholder="Search...">
+                <button type="sumbit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="menu">
+            <label for="chk1">
+                <i class="fa fa-bars"></i>
+            </label>
+        </div>
+    </header>
+
+    <div class="sidenav">
+        <h2 style="padding-top: 100px; text-align: center;">PYTHON</h2>
+        <a href="{% url 'kirish' %}">Введение в Python</a>
+        <a href="{% url 'ornatish' %}">Установка</a>
+        <a href="{% url 'izoh' %}">Комментарии</a>
+        <a href="{% url 'ozgaruvchi' %}">Переменная</a>
+        <a href="{% url 'malumot_turi' %}">Типы данных</a>
+        <a href="{% url 'sonlar' %}">Числа</a>
+        <a href="{% url 'satr' %}" style="background-color: rgb(18, 248, 18); color: black;">Строка</a>
+        <a href="{% url 'mantiq' %}">Boolean (Логика)</a>
+        <a href="{% url 'operator' %}">Операторы</a>
+        <a href="{% url 'list' %}">Список</a>
+        <a href="{% url 'tuple' %}">Кортеж</a>
+        <a href="{% url 'set' %}">Множество</a>
+        <a href="{% url 'if' %}">Условный оператор</a>
+        <a href="{% url 'funksiya' %}">Функция</a>
+        <a href="{% url 'while' %}">Цикл</a>
+        <a href="{% url 'massiv' %}">Массив</a>
+        <a href="{% url 'sinfobject' %}">Классы и объекты</a>
+        <a href="{% url 'meros' %}">Наследование</a>
+        <a href="{% url 'modul' %}">Модуль</a>
+        <a href="{% url 'data' %}">Дата и время</a>
+        <a href="{% url 'json' %}">JSON</a>
+        <a href="{% url 'try' %}">Try Except</a>
+        <a href="{% url 'fayl' %}">Работа с файлами</a>
+        <a href="{% url 'index' %}">Тест для сертификата </a>
+        <a href="{% url 'create_question' 1 %}">Создать тест</a>
+    </div>
+    <div class="main">
+        <h1 style="padding-top: 100px;">Строка <span>Python</span></h1> <br> <hr><br>
+        <p>В языке программирования Python строки заключаются в одинарные или двойные кавычки. <b>'Salom'</b> с <b>"Salom"</b> оба считаются одинаковыми. Вы можете использовать функцию <b>print()</b> вывода строки на черный экран.</p><br>
+        <p class="qoro">print("Hello") <br> print('Hello')</p><br>
+        <p class="rez">Результат: <p class="nat""> Hello <br> Hello </p></p><br><br><br>
+        
+        <p class="abbo"><b>Создать переменную со строковым типом.</b></p><br>
+        <p>Чтобы прикрепить строковую строку к переменной, вы можете напрямую написать ее, не используя ключевые слова, которые не встречаются в языке программирования Python.</p><br>
+        <p class="qoro">a = "Hello" <br> print(a)</p><br>
+        <p class="rez">Результат: <p class="nat""> Hello</p></p><br><br><br>
+        
+        <p class="abbo"><b>Присоединение многострочной строки к переменной.</b></p><br>
+        <p>Есть возможность заключить многострочную строку в 3 кавычки. обратите внимание на следующий пример.</p><br>
+        <p class="qoro">a = <span style="color: gainsboro;">""" <br>Assalomu alaykum bugun siz bilan Python dasturlashini boshlaymiz. <br>Ustozinigiz yoki Yo'lboshchingiz. <br>Master Bekturdiyev <br>""" </span><br><br>print(a)</p><br>
+        <p class="rez">Результат: <p class="nat""> Assalomu alaykum bugun siz bilan Python dasturlashini boshlaymiz. <br>Ustozinigiz yoki Yo'lboshchingiz. <br>Master Bekturdiyev</p></p><br><br><br>
+        
+        <p class="abbo"><b>Строки считаются массивами.</b></p><br>
+        <p>В языке программирования Python, как и во многих других языках программирования, строки считаются состоящими из байтов в выражении. Однако в языке программирования Python нет символьных типов данных, вы просто принимаете длину одного символа как 1. <b>[ ]</b> в квадратных скобках представлены данные.</p><br>
+        <p class="qoro">a = "Hello, World!" <br> print(a[1])</p><br>
+        
+        <p>Чтобы обрезать определенную часть строки и загрузить ее в какую-либо переменную или распечатать на экране, мы пишем начало и конец в квадратных скобках, а двоеточие отделяется друг от друга точкой. <b>[начало: конец]</b></p><br>
+        <p class="qoro">b = "Hello, World!" <br> print(b[2:5])</p><br>
+        <p class="rez">Результат: <p class="nat">llo</p></p><br><br><br>
+
+        <p>Для обратной обрезки "<b>-</b>" используем. При этом индекс последнего символа записывается первым.</p><br>
+        <p class="qoro">b = "Hello, World!" <br> print(b[-5:-2])</p><br>
+        <p class="rez">Результат: <p class="nat">orl</p></p><br><br><br>
+        
+        <p>Используйте функцию <b>len()</b>, чтобы получить длину строки .</p><br>
+        <p class="qoro">a = "Hello, World!" <br> print(<span style="color: red;">len</span>(a))</p><br>
+        <p class="rez">Результат: <p class="nat">13</p></p><br><br><br>
+
+        <p>Используйте функцию <b>lower()</b>, чтобы сделать все элементы строки маленькими.</p><br>
+        <p class="qoro">a = "Hello, World!" <br>print(a.<span style="color: red;">lower</span>())</p><br>
+        <p class="rez">Результат: <p class="nat">hello, world!</p></p><br><br><br>
+
+        <p>Используйте функцию <b>upper()</b>, чтобы сделать все элементы строки большими.</p><br>
+        <p class="qoro">a = "Hello, World!" <br>print(a.<b style="color: red;">upper</b>())</p><br>
+        <p class="rez">Результат: <p class="nat">HELLO, WORLD!</p></p><br><br><br>
+
+        <p><b class="abbo">Символы, используемые в строках.</b></p><br><br>
+        <p>
+            <img src="{% static 'image/sart-belgi.png' %}" alt="">
+        </p>
+    </div>
+    <footer>
+        <h3><b>Uzbek Developers</b></h3><hr>
+        <p>2024 © <a href="{% url 'kirish' %}"><b style="color: black;">Myblog IT</b></a></p>
+        <p>Created by Muzaffar Bekturdiyev</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Массивы Python</title>
+    <link rel="stylesheet" href="{% static 'style-kirish.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#chk1').click(function(){
+                $('.sidenav').toggleClass('show');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="chk1">
+        <div class="logo" ><h1><a href="{% url 'kirish' %}"><b>Python</b> course</a></h1></div>
+        <div class="search-box">
+            <form action="">
+                <input type="text" name="search" id="srch" placeholder="Search...">
+                <button type="sumbit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="menu">
+            <label for="chk1">
+                <i class="fa fa-bars"></i>
+            </label>
+        </div>
+    </header>
+
+    <div class="sidenav">
+        <h2 style="padding-top: 100px; text-align: center;">PYTHON</h2>
+        <a href="{% url 'kirish' %}">Введение в Python</a>
+        <a href="{% url 'ornatish' %}">Установка</a>
+        <a href="{% url 'izoh' %}">Комментарии</a>
+        <a href="{% url 'ozgaruvchi' %}">Переменная</a>
+        <a href="{% url 'malumot_turi' %}">Типы данных</a>
+        <a href="{% url 'sonlar' %}">Числа</a>
+        <a href="{% url 'satr' %}">Строка</a>
+        <a href="{% url 'mantiq' %}">Boolean (Логика)</a>
+        <a href="{% url 'operator' %}">Операторы</a>
+        <a href="{% url 'list' %}">Список</a>
+        <a href="{% url 'tuple' %}">Кортеж</a>
+        <a href="{% url 'set' %}">Множество</a>
+        <a href="{% url 'if' %}">Условный оператор</a>
+        <a href="{% url 'funksiya' %}">Функция</a>
+        <a href="{% url 'while' %}">Цикл</a>
+        <a href="{% url 'massiv' %}" style="background-color: rgb(18, 248, 18); color: black;">Массив</a>
+        <a href="{% url 'sinfobject' %}">Классы и объекты</a>
+        <a href="{% url 'meros' %}">Наследование</a>
+        <a href="{% url 'modul' %}">Модуль</a>
+        <a href="{% url 'data' %}">Дата и время</a>
+        <a href="{% url 'json' %}">JSON</a>
+        <a href="{% url 'try' %}">Try Except</a>
+        <a href="{% url 'fayl' %}">Работа с файлами</a>
+        <a href="{% url 'index' %}">Тест для сертификата </a>
+        <a href="{% url 'create_question' 1 %}">Создать тест</a>
+    </div>
+    <div class="main">
+        <h1 style="padding-top: 100px;">Массив <span>Python</span></h1> <br> <hr><br><br>
+        <p><b>Массив</b> - это специальная переменная, которая может содержать несколько значений одновременно. Например:</p><br>
+        <p class="qoro">cars = ["Ford", "Volvo", "BMW"]</p><br><br><br>
+
+        <p class="abbo"><b>Чтение элементов массива</b></p><br>
+        <p>В процессе чтения элементов массива достаточно обратиться к <b>индексу</b>.</p><br>
+        <p class="qoro">print(cars[0])</p><br>
+        <p class="rez">Результат: <p class="nat">Ford</p></p><br><br><hr><br>
+        
+        <p class="sari"><b>Примечание:</b> элементы массива индексируются от <b>0</b>.</p><br><hr><br><br>
+
+        <p><b class="abbo">Длина массива</b></p><br>
+        <p>Длину массива можно найти с помощью вспомогательной функции <b>len()</b></p><br>
+        <p class="qoro">x = len(cars)</p><br>
+        <p class="rez">Результат: <p class="nat">3</p></p><br><br>
+        
+        <p><b class="abbo">Отдельное чтение элементов массива</b></p><br>
+        <p>Вы можете распечатать элементы массива отдельно, используя команду <b>for in</b>.</p><br>
+        <p class="qoro">for x in cars: <br><span style="margin-left: 24px;">print(x)</span></p><br>
+        <p class="rez">Результат: <p class="nat">Ford <br>Volvo <br>BMW</p></p><br><br>
+
+        <p><b class="abbo">Добавление элемента в массив</b></p><br>
+        <p>Вы можете использовать метод <b>append()</b> для добавления элемента в массив. Пример ниже сосредоточьтесь на.</p><br>
+        <p class="qoro">cars.append("UzAvto ;(")</p><br>
+        <p class="rez">Результат: <p class="nat">Ford <br>Volvo <br>BMW <br>UzAvto ;(</p></p><br><br>
+
+        <p><b class="abbo">Удаление элемента в массив.</b></p><br>
+        <p>Вы можете использовать вспомогательные функции <b>pop()</b> и <b>remove()</b></p><br>
+        <p class="qoro">cars.pop(1) <br>cars.remove("UzAvto ;(")</p>
+    </div>
+    <footer>
+        <h3><b>Uzbek Developers</b></h3><hr>
+        <p>2024 © <a href="{% url 'kirish' %}"><b style="color: black;">Myblog IT</b></a></p>
+        <p>Created by Muzaffar Bekturdiyev</p>
+    </footer>
+</body>
+</html>

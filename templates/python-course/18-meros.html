@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наследование Python</title>
+    <link rel="stylesheet" href="{% static 'style-kirish.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#chk1').click(function(){
+                $('.sidenav').toggleClass('show');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="chk1">
+        <div class="logo" ><h1><a href="{% url 'kirish' %}"><b>Python</b> course</a></h1></div>
+        <div class="search-box">
+            <form action="">
+                <input type="text" name="search" id="srch" placeholder="Search...">
+                <button type="sumbit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="menu">
+            <label for="chk1">
+                <i class="fa fa-bars"></i>
+            </label>
+        </div>
+    </header>
+
+    <div class="sidenav">
+        <h2 style="padding-top: 100px; text-align: center;">PYTHON</h2>
+        <a href="{% url 'kirish' %}">Введение в Python</a>
+        <a href="{% url 'ornatish' %}">Установка</a>
+        <a href="{% url 'izoh' %}">Комментарии</a>
+        <a href="{% url 'ozgaruvchi' %}">Переменная</a>
+        <a href="{% url 'malumot_turi' %}">Типы данных</a>
+        <a href="{% url 'sonlar' %}">Числа</a>
+        <a href="{% url 'satr' %}">Строка</a>
+        <a href="{% url 'mantiq' %}">Boolean (Логика)</a>
+        <a href="{% url 'operator' %}">Операторы</a>
+        <a href="{% url 'list' %}">Список</a>
+        <a href="{% url 'tuple' %}">Кортеж</a>
+        <a href="{% url 'set' %}">Множество</a>
+        <a href="{% url 'if' %}">Условный оператор</a>
+        <a href="{% url 'funksiya' %}">Функция</a>
+        <a href="{% url 'while' %}">Цикл</a>
+        <a href="{% url 'massiv' %}">Массив</a>
+        <a href="{% url 'sinfobject' %}">Классы и объекты</a>
+        <a href="{% url 'meros' %}" style="background-color: rgb(18, 248, 18); color: black;">Наследование</a>
+        <a href="{% url 'modul' %}">Модуль</a>
+        <a href="{% url 'data' %}">Дата и время</a>
+        <a href="{% url 'json' %}">JSON</a>
+        <a href="{% url 'try' %}">Try Except</a>
+        <a href="{% url 'fayl' %}">Работа с файлами</a>
+        <a href="{% url 'index' %}">Тест для сертификата </a>
+        <a href="{% url 'create_question' 1 %}">Создать тест</a>
+    </div>
+    <div class="main">
+        <h1 style="padding-top: 100px;">Наследование (Класс/Class) <span>Python</span></h1><br><hr><br>
+        <p>Наследование позволяет нам определить класс, который наследует все значения из другого класса. При этом классы называются <b>родительским классом</b> и <b>дочерним классом</b>.</p><br>
+        <ul>
+            <li><b>Родительский класс:</b> это считается унаследованным классом, который также называется базовым классом.</li>
+            <li><b>Дочерний класс:</b> это класс, унаследованный от другого класса, также называемый производным классом.</li>
+        </ul><br><br><br>
+        
+        <p><b class="abbo">Создание родительского класса</b></p><br>
+        <p>Любой созданный класс может быть родительским классом, поэтому синтаксис считается таким же, как и при создании других классов.</p><br>
+        <p class="qoro">class Person: <br><span style="margin-left: 24px;">def __init__(self, fname, lname):</span> <br><span style="margin-left: 48px;">self.firstname = fname</span> <br><span style="margin-left: 48px;">self.lastname = lname</span> <br><br><span style="margin-left: 24px;">def printname(self):</span> <br><span style="margin-left: 48px;">print(self.firstname, self.lastname)</span> <br><br>x = Person("John", "Doe") <br>x.printname()</p><br><br>
+
+        <p><b class="abbo">Создание дочернего класса</b></p><br>
+        <p>Чтобы создать класс, который наследует функциональность от другого класса, отправьте базовый класс в качестве параметра при создании дочернего класса.</p><br>
+        <p class="qoro">class Student(Person): <br><span style="margin-left: 14px;">pass</span></p><br><br><hr><br>
+
+        <p class="sari"><b>Примечание:</b> Вы не хотите добавлять какие-либо другие свойства или методы в класс, используйте ключевое слово <b>pass</b>. Он останавливает выполнение всего элемента (внутри класса) после этого слова и останавливает действие текущего класса.</p><br><hr><br><br>
+        
+        <p>Теперь у <b>Student</b> есть то же свойство, что и у класса <b>Person</b>.</p><br>
+        <p class="qoro">x = Student("Muzaffar", "Bekturdiyev") <br>x.printname()</p><br><br>
+
+        <p><b class="abbo">Добавить функцию __init__()</b></p><br>
+        <p>Выше мы создали дочерний класс с вами, который наследует родительские свойства, мы пишем функцию <b>__init__()</b> вместо ключевого слова <b>pass</b>.</p><br>
+        <p class="qoro">class Student(Person): <br><span style="margin-left: 24px;">def __init__(self, fname, lname):</span> <br><span style="margin-left: 48px; color: gainsboro;"># несколько команд</span></p><br><br><hr><br>
+
+        <p class="sari"><b>Примечание:</b> добавление функции __init__() не наследует функцию __init__() в родительском классе.</p><br><hr><br><br>
+        
+        <p>Чтобы сохранить функцию родительского класса, нам нужно будет прикрепить функцию родительского класса __init__() к дочернему классу.</p><br>
+        <p class="qoro">class Student(Person): <br><span style="margin-left: 24px;">def __init__(self, fname, lname):</span> <br><span style="margin-left: 48px;">Person.__init__(self, fname, lname)</span></p><br>
+        
+        <p><b class="abbo">Используйте функцию super()</b></p><br>
+        <p>В языке программирования Python также есть функция, которая наследует все методы и свойства дочернего класса <b>super()</b> от родительского класса.</p><br>
+        <p class="qoro">class Student(Person): <br><span style="margin-left: 24px;">def __init__(self, fname, lname):</span> <br><span style="margin-left: 48px;">super().__init__(fname, lname)</span></p><br>
+        
+    </div>
+    <footer>
+        <h3><b>Uzbek Developers</b></h3><hr>
+        <p>2024 © <a href="{% url 'kirish' %}"><b style="color: black;">Myblog IT</b></a></p>
+        <p>Created by Muzaffar Bekturdiyev</p>
+    </footer>
+</body>
+</html>

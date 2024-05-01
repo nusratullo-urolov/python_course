@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Функция Python</title>
+    <link rel="stylesheet" href="{% static 'style-kirish.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#chk1').click(function(){
+                $('.sidenav').toggleClass('show');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="chk1">
+        <div class="logo" ><h1><a href="{% url 'kirish' %}"><b>Python</b> course</a></h1></div>
+        <div class="search-box">
+            <form action="">
+                <input type="text" name="search" id="srch" placeholder="Search...">
+                <button type="sumbit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="menu">
+            <label for="chk1">
+                <i class="fa fa-bars"></i>
+            </label>
+        </div>
+    </header>
+
+    <div class="sidenav">
+        <h2 style="padding-top: 100px; text-align: center;">PYTHON</h2>
+        <a href="{% url 'kirish' %}">Введение в Python</a>
+        <a href="{% url 'ornatish' %}">Установка</a>
+        <a href="{% url 'izoh' %}">Комментарии</a>
+        <a href="{% url 'ozgaruvchi' %}">Переменная</a>
+        <a href="{% url 'malumot_turi' %}">Типы данных</a>
+        <a href="{% url 'sonlar' %}">Числа</a>
+        <a href="{% url 'satr' %}">Строка</a>
+        <a href="{% url 'mantiq' %}">Boolean (Логика)</a>
+        <a href="{% url 'operator' %}">Операторы</a>
+        <a href="{% url 'list' %}">Список</a>
+        <a href="{% url 'tuple' %}">Кортеж</a>
+        <a href="{% url 'set' %}">Множество</a>
+        <a href="{% url 'if' %}">Условный оператор</a>
+        <a href="{% url 'funksiya' %}"  style="background-color: rgb(18, 248, 18); color: black;">Функция</a>
+        <a href="{% url 'while' %}">Цикл</a>
+        <a href="{% url 'massiv' %}">Массив</a>
+        <a href="{% url 'sinfobject' %}">Классы и объекты</a>
+        <a href="{% url 'meros' %}">Наследование</a>
+        <a href="{% url 'modul' %}">Модуль</a>
+        <a href="{% url 'data' %}">Дата и время</a>
+        <a href="{% url 'json' %}">JSON</a>
+        <a href="{% url 'try' %}">Try Except</a>
+        <a href="{% url 'fayl' %}">Работа с файлами</a>
+        <a href="{% url 'index' %}">Тест для сертификата </a>
+        <a href="{% url 'create_question' 1 %}">Создать тест</a>
+    </div>
+    <div class="main">
+        <h1 style="padding-top: 100px;">Функция <span>Python</span></h1> <br> <hr><br>
+        <p>Функция - это просто блок кода, который запускается во время вызова. В качестве параметров в функцию можно передавать данные. Функции используются для выполнения определенной задачи. У вас есть возможность использовать функцию, которую вы создали в процессе написания кода, один или несколько раз или вообще не использовать ее.</p><br>
+        
+        <p><b class="abbo">Создание функции</b></p><br>
+        <p>В языке программирования Python для создания функции используется ключевое слово <b>def</b>. Например:</p><br>
+        <p class="qoro">def my_function(): <br><span style="margin-left: 24px;">print("Hello Myblog IT")</span></p><br><br><br>
+
+        <p><b class="abbo">Вызов функции</b></p><br>
+        <p>При вызове функции мы используем ее имя, если параметры, мы используем параметры, если в противном случае мы используем пустую скобку <b>()</b>.</p><br>
+        <p class="qoro">def my_function(): <br><span style="margin-left: 24px;">print("Hello Myblog IT")</span> <br><br>my_function()</p><br>
+        <p class="rez">Результат: <p class="nat">Hello Myblog IT</p></p><br><br><br>
+
+        <p><b class="abbo">Аргументы</b></p><br>
+        <p>Аргументы, которым будет присвоена функция, должны быть указаны в скобках рядом с именем функции. при этом у вас будет возможность передать указанные аргументы функции. В приведенном ниже примере мы создадим функцию, которая извлекает имя из аргумента <b>name</b>, добавляя слово "Developer".</p><br>
+        <p class="qoro">def my_function(name): <br><span style="margin-left: 24px;">print(name + " Developer")</span> <br><br>my_function("Farrukh") <br>my_function("Qudrat") <br>my_function("Muzaffar")</p><br>
+        <p class="rez">Результат: <p class="nat">Farrukh Developer <br>Qudrat Developer <br>Muzaffar Developer</p></p><br><br><hr><br>
+
+        <p class="sari">Аргументы часто сводятся к аргументам в документации Python.</p><br><hr><br><br>
+
+        <p><b class="bobo">Python Math</b></p><br><br>
+        <p>В языке программирования Python есть готовый математический модуль и функциональная работа для выполнения операций это имя модуля <b>math</b>. Это поможет вам выполнить цифровые шаги. Мы рассмотрим с вами несколько математических функций.</p><br>
+        
+        <p><b class="abbo">min() и max()</b></p><br>
+        <p>Используется для нахождения наименьшего и наибольшего из чисел.</p><br>
+        <p class="qoro">x = min(5, 10, 25) <br>y = max(5, 10, 25) <br><br>print(x) <br>print(y)</p><br>
+        <p class="rez">Результат: <p class="nat">5 <br>25</p></p><br><br>
+
+        <p><b class="abbo">abs()</b></p><br>
+        <p>Дает положительное значение заданного значения. Он возвращает позитив, даже если он положительный.</p><br>
+        <p class="qoro">x = abs(-7.25) <br><br>print(x)</p><br>
+        <p class="rez">Результат: <p class="nat">7.25</p></p><br><br>
+
+        <p><b class="abbo">pow(x, y)</b></p><br>
+        <p>Функция вычисляет x степени y. При этом у вас будет возможность подсчитать числа под корнем.</p><br>
+        <p class="qoro">x = pow(4, 3) <br><br>print(x)</p><br>
+        <p class="rez">Результат: <p class="nat">64</p></p><br><br>
+        
+        <p><b class="abbo">sqrt()</b></p><br>
+        <p>Функция выдает заданное значение в качестве подсчета под корнем второго порядка.</p><br>
+        <p class="qoro">import math <br><br>x = math.sqrt(64) <br>print(x)</p><br>
+        <p class="rez">Результат: <p class="nat">8</p></p><br><br>
+        
+        <p><b class="abbo">ceil()</b></p><br>
+        <p>Функция приближает данное значение к ближайшему целому числу вверх.</p><br>
+        <p class="qoro">import math <br><br>x = math.ceil(1.5) <br>print(x) <span style="color: gainsboro;"># 2</span></p><br>
+        <p class="rez">Результат: <p class="nat">2</p></p><br><br>
+        
+        <p><b class="abbo">floor()</b></p><br>
+        <p>Функция приближает данное значение к ближайшему целому числу вниз.</p><br>
+        <p class="qoro">import math <br><br>x = math.floor(1.4) <br>print(x) <span style="color: gainsboro;"># 1</span></p><br>
+        <p class="rez">Результат: <p class="nat">1</p></p><br><br>
+        
+        <p>В модуле <b>Math</b> есть больше функций, чем это, хотя функции, которые мы цитируем, кажутся редкими myblog.it.uz мы надеемся, что вы найдете соответствующую статью в разделе статей в.</p>
+
+    </div>
+    <footer>
+        <h3><b>Uzbek Developers</b></h3><hr>
+        <p>2024 © <a href="{% url 'kirish' %}"><b style="color: black;">Myblog IT</b></a></p>
+        <p>Created by Muzaffar Bekturdiyev</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест | Введение</title>
+    <link rel="stylesheet" href="{% static 'test/stylee.css' %}">
+    <!-- FontAwesome CDN Link for icon -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    </head>
+<body>
+    <!-- Start test button -->
+    <div class="start_btn"><button>Начать Тест</button></div>
+
+    <!-- Info Box -->
+    <div class="info_box">
+        <div class="info_title">
+            <span>Правила о тесте</span>
+        </div>
+        <div class="info_list">
+            <div class="info">1. На каждый вопрос у вас будет всего <span>30 секунд</span>.</div>
+            <div class="info">2. Выбрав ответ, вы не сможете выбрать его повторно.</div>
+            <div class="info">3. Вы не сможете выбрать какой-либо вариант, когда время истечет.</div>
+            <div class="info">4. Вы не можете выйти из викторины во время игры.</div>
+            <div class="info">5. Вы получите баллы за правильные ответы.</div>
+        </div>
+        <div class="buttons">
+            <button class="quit">Выход</button>
+            <button class="restart">Продолжать</button>
+        </div>
+    </div>
+
+    <!-- Test -->
+    <div class="quiz_box">
+        <header>
+            <div class="title">Комментарий Python</div>
+            <div class="timer">
+                <div class="time_text">Время</div>
+                <div class="time_sec">30</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+        <section>
+            <div class="que_text">
+                <!-- <span>Вопрос?</span> -->
+            </div>
+            <div class="option_list">
+                <!-- <div class="option">
+                    <span>Ответ-1</span>
+                    <div class="icon tick"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="option">
+                    <span>Ответ-2</span>
+                    <div class="icon cross"><i class="fas fa-times"></i></div>
+                </div>
+                <div class="option">
+                    <span>Ответ-3</span>
+                </div>
+                <div class="option">
+                    <span>Ответ-4</span>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- Тестовый нижний колонтитул -->
+        <footer>
+            <div class="total_que">
+                <!-- <span><p>2</p>из<p>5</p>Вопросы</span> -->
+            </div>
+            <button class="next_btn">След. вопрос</button>
+        </footer>
+    </div>
+
+    <!-- Результаты -->
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">Вы прошли Тест!</div>
+        <div class="score_text">
+            <!-- <span>извините, У вас получилось только <p>2</p> из <p>5</p></span> -->
+        </div>
+        <div class="buttons">
+            <button class="restart">Повторно</button>
+            <a href="{% url 'izoh' %}"><button class="quit">Выход</button></a>
+        </div>
+    </div>
+
+    <script src="{% static 'test/js/comment.js' %}"></script>
+    <script src="{% static 'test/js/script.js' %}"></script>
+
+</body>
+</html>

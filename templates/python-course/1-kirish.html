@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Введение Python</title>
+    <link rel="stylesheet" href="{% static 'style-kirish.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#chk1').click(function(){
+                $('.sidenav').toggleClass('show');
+            });
+        });
+    </script>
+    <script src="{% static 'search.js' %}"></script>
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="chk1">
+        <div class="logo" ><h1><a href="{% url 'home' %}"><b>Python</b> course</a></h1></div>
+        <div class="search-box">
+            <input type="text"  id="srch" placeholder="Search...">
+            <button type="sumbit"><i class="fa fa-search"></i></button>
+        </div>
+
+        <div class="menu">
+            <label for="chk1">
+                <i class="fa fa-bars"></i>
+            </label>
+        </div>
+    </header>
+
+    <div class="sidenav">
+        <h2 style="padding-top: 100px; text-align: center;">PYTHON</h2>
+        <a href="{% url 'kirish' %}" style="background-color: rgb(18, 248, 18); color: black;">Введение в Python</a>
+        <a href="{% url 'ornatish' %}">Установка</a>
+        <a href="{% url 'izoh' %}">Комментарии</a>
+        <a href="{% url 'ozgaruvchi' %}">Переменная</a>
+        <a href="{% url 'malumot_turi' %}">Типы данных</a>
+        <a href="{% url 'sonlar' %}">Числа</a>
+        <a href="{% url 'satr' %}">Строка</a>
+        <a href="{% url 'mantiq' %}">Boolean (Логика)</a>
+        <a href="{% url 'operator' %}">Операторы</a>
+        <a href="{% url 'list' %}">Список</a>
+        <a href="{% url 'tuple' %}">Кортеж</a>
+        <a href="{% url 'set' %}">Множество</a>
+        <a href="{% url 'if' %}">Условный оператор</a>
+        <a href="{% url 'funksiya' %}">Функция</a>
+        <a href="{% url 'while' %}">Цикл</a>
+        <a href="{% url 'massiv' %}">Массив</a>
+        <a href="{% url 'sinfobject' %}">Классы и объекты</a>
+        <a href="{% url 'meros' %}">Наследование</a>
+        <a href="{% url 'modul' %}">Модуль</a>
+        <a href="{% url 'data' %}">Дата и время</a>
+        <a href="{% url 'json' %}">JSON</a>
+        <a href="{% url 'try' %}">Try Except</a>
+        <a href="{% url 'fayl' %}">Работа с файлами</a>
+        <a href="{% url 'index' %}">Тест для сертификата </a>
+        <a href="{% url 'create_question' 1 %}">Создать тест</a>
+    </div>
+    <div class="main">
+        <h1 style="padding-top: 100px;">Введение в <span>Python</span></h1> <br><hr><br>
+        <p><b>Python</b> - один из широко используемых в настоящее время языков программирования.</p> <br>
+        <p><b>Автор:</b> Гвидо ван Россум (Gvido van Rossum).</p> <br>
+        <p><b>Разработано:</b> 1991 году</p> <br>
+        <p><b>Официальный сайт: </b><i><a href="https://www.python.org/">python.org</a></i></p><br>
+        <p><b>Расширения файлов:</b> <i style="color: rgb(0, 0, 0);"> .py, .pyc, .pyd, .pyo, .pyw, .pyz. </i></p><br>
+        <p>Посмотрите ниже. Это <i><a href="https://ru.wikipedia.org/wiki/Фреймворк">фреймворк</a></i>и Python, используемые в различных областях программирования.</p><br>
+        <ul>
+            <li><b>Веб-программирования:</b> Django, Pyramid, Bottle, Tornado, Flask, web2py</li> 
+            <li><b>Интерфейс программирования:</b> TkInter, PyGObject, PyQt, PySide, Kivy, wxPython</li>
+            <li><b>Scientific and Numeric:</b> SciPy, Pandas, IPython</li>
+            <li><b>Компьютерные Программы:</b> Buildbot, Trac, Roundup</li>
+            <li><b>Администратор Сервера:</b> Ansible, Salt, OpenStack</li>
+        </ul><br><br><br>
+        
+        <p><b class="abbo">Пачему Python?</b></p><br>
+        <ul>
+            <li><b>Python</b> работает на разных платформах. (<b>Windows, Linux, Mac</b> и т.д.)</li>
+            <li><b>Python</b> имеет простой синтаксис, похожий на английский.</li>
+            <li><b>Язык программирования Python</b> позволяет программисту писать меньше кода, чем другие языки программирования.</li>
+            <li><b>В Python</b> есть возможность создавать <b>веб-приложения</b>, <b>настольные</b> и <b>мобильные</b> приложения.</li>
+            <li><b>Python</b> библиотеки намного больше! вы делаете почти всю свою работу через библиотеки!</li>
+            <li><b>Python</b> имеет гораздо более высокую скорость обработки, занимая меньше места в памяти! PyPI-сайт библиотек Python!</li>
+        </ul><br><br><br>
+        
+        <p>Наибольший потенциал языка программирования Python заключается в его открытом коде и обилии библиотек, а задано и в компактности содержащегося в нем кода. прямо сейчас мы предлагаем вам написать слово "Hello, World" на 3 языках программирования: C, Java и Python!</p><br>
+        <p class="hell">
+            <img src="{% static 'image/hello.png' %}" alt="Hello World!">
+        </p><br>
+        <p>Из этого видно, что на языке программирования Python код, вводимый программистом, сжат и занимает меньше вашего времени.</p><br>
+        <p>Для работы языка программирования <b>Python</b> не требуется мощный компьютер. Использование кода, который вы пишете, на нетбуке, компьютере с более простой характеристикой, возможно даже на вашем Android-смартфоне в руке.</p><br>
+        <p>Считается очень хорошим языком программирования для сервера. в настоящее время среди программистов существует так называемый язык программирования, созданный для хакеров.</p><br><br><br>
+        
+        <p class="savol"><b><i style="color: black;">Вопрос в том, можем ли мы также применить в веб-программировании?</i></b></p><br>
+        <p class="javob">Например kutubxonachi.uz сайт разработан на Python. Google Inc.также широко использует Python включая Amazon, ZTE и несколько популярных компаний используют язык программирования Python.</p>
+    </div>
+    <footer>
+        <h3><b>Uzbek Developers</b></h3><hr>
+        <p>2024 © <a href="{% url 'home' %}"><b style="color: black;">Myblog IT</b></a></p>
+        <p>Created by Muzaffar Bekturdiyev</p>
+    </footer>
+</body>
+</html>

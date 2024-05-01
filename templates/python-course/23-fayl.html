@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Файл Python</title>
+    <link rel="stylesheet" href="{% static 'style-kirish.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#chk1').click(function(){
+                $('.sidenav').toggleClass('show');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="chk1">
+        <div class="logo" ><h1><a href="{% url 'kirish' %}"><b>Python</b> course</a></h1></div>
+        <div class="search-box">
+            <form action="">
+                <input type="text" name="search" id="srch" placeholder="Search...">
+                <button type="sumbit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="menu">
+            <label for="chk1">
+                <i class="fa fa-bars"></i>
+            </label>
+        </div>
+    </header>
+
+    <div class="sidenav">
+        <h2 style="padding-top: 100px; text-align: center;">PYTHON</h2>
+        <a href="{% url 'kirish' %}">Введение в Python</a>
+        <a href="{% url 'ornatish' %}">Установка</a>
+        <a href="{% url 'izoh' %}">Комментарии</a>
+        <a href="{% url 'ozgaruvchi' %}">Переменная</a>
+        <a href="{% url 'malumot_turi' %}">Типы данных</a>
+        <a href="{% url 'sonlar' %}">Числа</a>
+        <a href="{% url 'satr' %}">Строка</a>
+        <a href="{% url 'mantiq' %}">Boolean (Логика)</a>
+        <a href="{% url 'operator' %}">Операторы</a>
+        <a href="{% url 'list' %}">Список</a>
+        <a href="{% url 'tuple' %}">Кортеж</a>
+        <a href="{% url 'set' %}">Множество</a>
+        <a href="{% url 'if' %}">Условный оператор</a>
+        <a href="{% url 'funksiya' %}">Функция</a>
+        <a href="{% url 'while' %}">Цикл</a>
+        <a href="{% url 'massiv' %}">Массив</a>
+        <a href="{% url 'sinfobject' %}">Классы и объекты</a>
+        <a href="{% url 'meros' %}">Наследование</a>
+        <a href="{% url 'modul' %}">Модуль</a>
+        <a href="{% url 'data' %}">Дата и время</a>
+        <a href="{% url 'json' %}">JSON</a>
+        <a href="{% url 'try' %}">Try Except</a>
+        <a href="{% url 'fayl' %}" style="background-color: rgb(18, 248, 18); color: black;">Работа с файлами</a>
+        <a href="{% url 'index' %}">Тест для сертификата </a>
+        <a href="{% url 'create_question' 1 %}">Создать тест</a>
+    </div>
+    <div class="main">
+        <h1 style="padding-top: 100px;">Файл <span>Python</span></h1> <br> <hr><br><br>
+        <p>В языке программирования Python есть несколько шагов, которые вы можете выполнить над файлами. Создавать, читать, обновлять и удалять.</p><br><br>
+
+        <p><b class="abbo">Работа с файлами</b></p><br>
+        <p>Основной функцией работы с файлами является функция open (). Эта функция принимает два параметра file_name и file_режим.</p><br><br>
+
+        <p><b class="abbo">Способы открытия файлов</b></p><br>
+        <ol style="margin-left: 40px; line-height: 200%;">
+            <li><b>"r"</b> - Read - значение по умолчанию. Открывает файл для чтения, ошибка, если файл не существует;</li>
+            <li><b>"a"</b> - Add - открывает файл для добавления, если он недоступен, создает его;</li>
+            <li><b>"w"</b> - Write - открывает файл для записи, если он недоступен, создает его;</li>
+            <li><b>"x"</b> - Create - создает указанный файл, возвращает ошибку, если файл существует;</li>
+        </ol><br><br>
+        <p>Вы также можете указать, должен ли файл работать в двоичном или текстовом режиме.</p><br><br>
+        <ul>
+            <li><b>"t"</b> - Текст-значение по умолчанию. Текстовый режим</li>
+            <li><b>"b"</b> - Двоичный-двоичный режим (например, изображения)</li>
+        </ul><br><br>
+        <p>Если вы хотите открыть файл, не помечая его в каком-либо режиме, вы запишете само имя файла. в этом случае по умолчанию будет "R", то есть для открытия файла.</p><br>
+        <p class="qoro">f = open("demofile.txt")</p><br><br>
+        
+        <p>Открыть файл другими способами то есть открыть его с другой целью.</p><br>
+        <p class="qoro">f = open("demofile.txt", "rt")</p><br><hr><br><br><br>
+
+        <!--Чтение файлов-->
+
+        <p><b class="bobo">Чтение файла Python</b></p><br><br>
+        <p>Используйте функцию open() для открытия файлов. Функция <b>read()</b> используется для чтения файла. в приведенном ниже примере функция <b>read</b> будет работать с перенаправлением на <b>open()</b> (это всегда будет случай).</p><br>
+        <p class="qoro">f = open("demofile.txt", "r") <br>print(f.read())</p><br><br>
+
+        <p>Если читаемый файл находится в другом месте, необходимо указать его местоположение перед именем <b>file_name</b>.</p><br>
+        <p class="qoro">f = open("D:\\myfiles\welcome.txt", "r") <br>print(f.read())</p><br><br>
+
+        <p><b class="abbo">Файл читается до n символов.</b></p><br>
+        <p>Чтобы прочитать файл до определенного символа, все, что нам нужно сделать, это передать количество символов функции <b>read()</b>.</p><br>
+        <p class="qoro">f = open("demofile.txt", "r") <br>print(f.read(5))</p><br><br>
+
+        <p><b class="abbo">Чтение строк</b></p><br>
+        <p>Вы можете вернуть одну строку, используя функцию <b>readline():</b></p><br>
+        <p class="qoro">f = open("demofile.txt", "r") <br>print(f.readline())</p><br><br>
+        
+        <p>Используя <b>readline()</b> функцию двойного умножения, вы можете прочитать две первые строки:</p><br>
+        <p class="qoro">f = open("demofile.txt", "r") <br>print(f.readline()) <br>print(f.readline())</p><br><br>
+        <p>Через цикл строк файла вы можете читать весь файл строка за строкой:</p><br>
+        <p class="qoro">f = open("demofile.txt", "r") <br>for x in f: <br><span style="margin-left: 24px;">print(x)</span></p><br><br>
+        
+        <p><b class="abbo">Закрыть файлы</b></p><br>
+        <p>Когда вы закончите, рекомендуется всегда закрывать файл.</p><br>
+        <p class="qoro">f = open("demofile.txt", "r") <br>print(f.readline()) <br>f.close()</p><br><br><hr><br>
+
+        <p class="sari"><b>Примечание:</b> Вы всегда должны закрывать свои файлы, в некоторых случаях из-за буферизации изменения, внесенные в файл, могут не отображаться, пока вы не закроете файл.</p><br><hr><br><br><br>
+
+        <!--Создать/Наисать файл-->
+
+        <p><b class="bobo">Написание / создание файла Python</b></p><br><br>
+        <p><b class="abbo">Запись в существующий файл</b></p><br>
+        <p>Вам нужно добавить параметр в функцию <b>open()</b>, чтобы записать ее в существующий файл:</p><br>
+        <ul>
+            <li><b>"a"</b> - Append - добавляется в конец файла;</li>
+            <li><b>"w"</b> - Write - переписывает любой существующий контент.</li>
+        </ul><br><br>
+        <p class="qoro">f = open("demofile2.txt", "a") <br>f.write("Now the file has more content!") <br>f.close() <br><br>f = open("demofile2.txt", "r") <br>print(f.read())</p><br><br>
+        
+        <p><b class="abbo">Создать новый файл</b></p><br>
+        <p>Чтобы создать новый файл в Pythonopen(), используйте один из следующих параметров <b>open()</b>:</p><br>
+        <ul>
+            <li><b>"x"</b> - Create - создает файл, возвращает ошибку, если файл существует;</li>
+            <li><b>"a"</b> - Add - создает файл, если указанный файл недоступен;</li>
+            <li><b>"w"</b> - Write - создает файл, если указанный файл недоступен.</li>
+        </ul><br><br>
+        
+        <p><i style="color: black;">myfile.txt</i> fayl yaratish.</p><br>
+        <p class="qoro">f = open("myfile.txt", "x")</p><br><br>
+        <p>Результат: создан новый пустой файл!</p><br>
+        <ul>
+            <li>Если его нет, создайте новый файл:</li>
+        </ul><br>
+        <p class="qoro">f = open("myfile.txt", "w")</p><br><br><hr><br><br>
+
+        <!--Удалить файл-->
+
+        <p><b class="bobo">Удалить файл Python</b></p>
+        <p>Мы будем использовать модуль os для удаления файла на языке программирования Python. Для запуска удаления.необходимо использовать функцию os.remove().</p><br>
+        <p class="qoro">import os <br>os.remove("demofile.txt")</p><br><br>
+
+        <p><b class="abbo">Проверка наличия файла:</b></p><br>
+        <p>Чтобы избежать ошибки, вы можете проверить наличие файла перед его удалением:</p><br>
+        <p class="qoro">import os <br>if os.path.exists("demofile.txt"): <br><span style="margin-left: 24px;">os.remove("demofile.txt")</span> <br>else: <br><span style="margin-left: 24px;">print("Файл не найден")</span></p><br><br>
+
+        <p><b class="abbo">Удалить папку</b></p><br>
+        <p>Следующая для удаления всей папки используйте функцию os.rmdir():</p><br>
+        <p class="qoro">import os <br>os.rmdir("myfolder")</p>
+    </div>
+    <footer>
+        <h3><b>Uzbek Developers</b></h3><hr>
+        <p>2024 © <a href="{% url 'kirish' %}"><b style="color: black;">Myblog IT</b></a></p>
+        <p>Created by Muzaffar Bekturdiyev</p>
+    </footer>
+</body>
+</html>
